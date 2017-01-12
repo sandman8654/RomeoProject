@@ -1,0 +1,20 @@
+#-- encoding: UTF-8
+#-- copyright
+# RomeoProject is a project management system.
+#
+# Copyright (C) 2010-2013 the RomeoProject Team
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# See doc/COPYRIGHT.rdoc for more details.
+#++
+
+I18n.default_locale = 'en'
+# Adds fallback to default locale for untranslated strings
+I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+
+require 'redmine'
+require 'Romeo_project'

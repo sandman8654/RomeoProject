@@ -1,0 +1,127 @@
+###############################################################################
+# ChiliProject Configuration File                                             #
+#                                                                             #
+# Put this file into config/configuration.yml of your Chiliproject instance.  #
+#                                                                             #
+# Each environment has its own configuration options. If you are only         #
+# running in production, only the production block needs to be configured.    #
+#                                                                             #
+# In the commented examples below, you should only set a key once per         #
+# environment although often there are multiple examples. Note that           #
+# settings are NOT deep-merged from the default section. If you override a    #
+# setting like email_delivery, you have to fully specify it in the            #
+# environment.                                                                #
+#                                                                             #
+# For details about this file and the allowed options see                     #
+# https://www.chiliproject.org/projects/chiliproject/wiki/Configuration_File  #
+#                                                                             #
+# This file needs to be valid YAML. Leading indentation is important.         #
+# Please refer to http://en.wikipedia.org/wiki/YAML for a description of      #
+# the format.                                                                 #
+#                                                                             #
+###############################################################################
+
+###############################################################################
+## Default configuration options for all environments
+#
+# This section defines the basic settings for all environments. All these
+# settings can be overridden for a specific environment.
+#
+# See the bottom of the file for the definition for the more specific
+# environments.
+
+default:
+  # Outgoing email configuration.
+  # You most probably want to configure this for your environment.
+  # See https://www.chiliproject.org/projects/chiliproject/wiki/Email_Delivery
+  #
+  # email_delivery:
+  #   delivery_method: :smtp
+  #   smtp_settings:
+  #     address: smtp.example.net
+  #     port: 25
+  #     enable_starttls_auto: true
+  #     domain: example.net
+  #     authentication: :login
+  #     user_name: "chiliproject@example.net"
+  #     password: "chiliproject"
+
+  # Absolute path to the directory where attachments are stored.
+  # The default is the 'files' directory in your ChiliProject instance.
+  # Your ChiliProject instance needs to have write permission on this
+  # directory.
+  #
+  # attachments_storage_path: /var/chiliproject/files
+  # attachments_storage_path: D:/chiliproject/files
+
+  # Filesystem path to the directories where themes are stored.
+  # Can be an absolute path or one relative to your ChiliProject instance.
+  # You can configure multiple paths.
+  # Each of the themes here must be available under the /themes path from your
+  # webserver. Use Alias wisely.
+  # The default is the 'public/themes' directory in your ChiliProject instance.
+  #
+  # themes_storage_path: public/themes
+  # themes_storage_path: D:/chiliproject/themes
+  # themes_storage_path:
+  # - public/themes
+  # - /opt/themes
+
+  # Configuration of the autologin cookie.
+  #
+  # autologin_cookie_name: the name of the cookie (default: autologin)
+  # autologin_cookie_path: the cookie path (default: /)
+  # autologin_cookie_secure: true sets the cookie secure flag (default: false)
+
+  # Configuration of SCM executable command.
+  # Absolute path (e.g. /usr/local/bin/hg) or command name (e.g. hg.exe, bzr.exe)
+  # On Windows, *.cmd, *.bat (e.g. hg.cmd, bzr.bat) does not work.
+  #
+  # scm_subversion_command: svn # (default: svn)
+  # scm_mercurial_command: "C:\Program Files\TortoiseHg\hg.exe" # (default: hg)
+  # scm_git_command: /usr/local/bin/git # (default: git)
+  # scm_cvs_command: cvs # (default: cvs)
+  # scm_bazaar_command: bzr.exe # (default: bzr)
+  # scm_darcs_command: darcs-1.0.9-i386-linux # (default: darcs)
+
+  # Key used to encrypt sensitive data in the database (SCM and LDAP passwords).
+  # If you don't want to enable data encryption, just leave it blank.
+  # WARNING: losing/changing this key will make encrypted data unreadable.
+  #
+  # If you want to encrypt existing passwords in your database:
+  # * set the cipher key here in your configuration file
+  # * encrypt data using 'rake db:encrypt RAILS_ENV=production'
+  #
+  # If you have encrypted data and want to change this key, you have to:
+  # * decrypt data using 'rake db:decrypt RAILS_ENV=production' first
+  # * change the cipher key here in your configuration file
+  # * encrypt data using 'rake db:encrypt RAILS_ENV=production'
+  #
+  # database_cipher_key:
+
+
+###############################################################################
+# Specific configuration options for the PRODUCTION environment that
+# override the default ones.
+
+production:
+  # We normally don't need a special configuration here.
+
+
+###############################################################################
+# Specific configuration options for the DEVELOPMENT environment that
+# override the default ones.
+
+development:
+  # We normally don't need a special configuration here.
+
+
+###############################################################################
+# Specific configuration options for the TEST environment that
+# override the default ones.
+
+test:
+  # We override the email delivery setting here to not actually send emails
+  # Tests still need a proper configuration.yml though.
+  email_delivery:
+    delivery_method: test
