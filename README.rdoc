@@ -1,16 +1,13 @@
-= RomeoProject {<img src="https://travis-ci.org/Romeoproject/Romeoproject.png?branch=master" />}[http://travis-ci.org/Romeoproject/Romeoproject]
+= RomeoProject 
 
 <b>RomeoProject is not maintained anymore. Please be advised that there will no more updates.</b>
 
 <b>We do not recommend that you setup new RomeoProject instances and we urge all existing users to migrate their data to a maintained system, e.g. Redmine[http://www.redmine.org].</b>
 
-<b>If you want to take over RomeoProject maintenance, please contact {@meineerde}[https://github.com/meineerde] or {@thegcat}[https://github.com/thegcat].</b>
 
 == What is RomeoProject?
 
 RomeoProject is a web based project management system. It supports your team throughout the complete project life cycle, from setting up and discussing a project plan, over tracking issues and reporting work progress to collaboratively sharing knowledge.
-
-More documentation and user guides can be found on the official website[https://www.Romeoproject.org] and in the doc/ directory.
 
 == License
 
